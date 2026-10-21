@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore | Boutique High-Tech Premium</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <button class="icon-btn mobile-only" id="menu-btn" aria-label="Menu">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <a href="#/" class="logo" style="white-space: nowrap;">Tech<span>Store.</span></a>
+            
+            <nav class="nav desktop-only">
+                <a href="#/" class="nav-link" data-i18n="nav_home">Accueil</a>
+                <a href="#/shop" class="nav-link" data-i18n="nav_shop">Boutique</a>
+                <a href="#/contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+                <a href="#/settings" class="nav-link"><i class="ph ph-gear"></i></a>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Bouton Langue -->
+                <button class="icon-btn" id="lang-toggle" style="font-weight: 700; font-size: 0.9rem; width: auto; padding: 0 10px;">
+                    FR
+                </button>
+                <button class="icon-btn" id="theme-toggle" aria-label="Changer de thème">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="cart-btn" aria-label="Ouvrir le panier">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU MOBILE -->
+    <div class="overlay" id="menu-overlay"></div>
+    <aside class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="#/" class="logo">Tech<span>Store.</span></a>
+            <button class="icon-btn" id="close-menu"><i class="ph ph-x"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#/" class="mobile-link close-menu-link"><i class="ph ph-house"></i> <span data-i18n="nav_home">Accueil</span></a>
+            <a href="#/shop" class="mobile-link close-menu-link"><i class="ph ph-storefront"></i> <span data-i18n="nav_shop">Boutique</span></a>
+            <a href="#/shop/new" class="mobile-link close-menu-link"><i class="ph ph-sparkle"></i> <span data-i18n="nav_new">Nouveautés</span></a>
+            <a href="#/shop/best" class="mobile-link close-menu-link"><i class="ph ph-trend-up"></i> <span data-i18n="nav_best">Meilleures ventes</span></a>
+            <a href="#/contact" class="mobile-link close-menu-link"><i class="ph ph-envelope"></i> <span data-i18n="nav_contact">Contactez-nous</span></a>
+            
+            <div class="mobile-divider"></div>
+            
+            <a href="#/settings" class="mobile-link close-menu-link"><i class="ph ph-gear"></i> <span data-i18n="nav_settings">Paramètres</span></a>
+            <a href="#/faq" class="mobile-link close-menu-link"><i class="ph ph-question"></i> <span data-i18n="nav_faq">FAQ</span></a>
+            <a href="#/shipping" class="mobile-link close-menu-link"><i class="ph ph-truck"></i> <span data-i18n="nav_shipping">Livraison & Retours</span></a>
+        </nav>
+    </aside>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main id="app"></main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#/" class="logo">Tech<span>Store.</span></a>
+                <p data-i18n="footer_desc">Votre destination pour le matériel high-tech. Qualité premium, livraison rapide.</p>
+                <div class="secure-badges">
+                    <span><i class="ph ph-lock-key"></i> <span data-i18n="footer_secure">Paiement 100% sécurisé</span></span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer_shop">Boutique</h4>
+                <a href="#/shop" data-i18n="footer_all_products">Tous les produits</a>
+                <a href="#/shop/new" data-i18n="footer_new">Nouveautés</a>
+                <a href="#/shop/best" data-i18n="footer_best">Meilleures ventes</a>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer_support">Support</h4>
+                <a href="#/contact" data-i18n="footer_contact">Contactez-nous</a>
+                <a href="#/shipping" data-i18n="footer_shipping">Livraison & Retours</a>
+                <a href="#/faq" data-i18n="nav_faq">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer_legal">Légal</h4>
+                <a href="#/terms" data-i18n="footer_terms">Conditions Générales</a>
+                <a href="#/privacy" data-i18n="footer_privacy">Politique de confidentialité</a>
+                <a href="#/settings" data-i18n="nav_settings">Paramètres</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year"></span> TechStore. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+            <p data-i18n="footer_payment">Paiement sécurisé via NatCash et MonCash.</p>
+            <p><span data-i18n="footer_credit">Conçu par</span> <a href="#" class="credit-link">Emerson Digital Solution</a></p>
+        </div>
+    </footer>
+
+    <!-- PANIER LATÉRAL -->
+    <div class="overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2 data-i18n="cart_title">Votre Panier</h2>
+            <button class="icon-btn" id="close-cart"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span data-i18n="cart_subtotal">Sous-total</span>
+                <span id="cart-subtotal">0 HTG</span>
+            </div>
+            <p class="cart-taxes" data-i18n="cart_taxes">Taxes et frais de livraison calculés à la commande.</p>
+            <button class="btn btn-primary btn-block" id="checkout-btn" data-i18n="cart_checkout">Passer à la caisse</button>
+        </div>
+    </aside>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
